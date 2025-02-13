@@ -140,7 +140,7 @@ class LivePlotCallback(BaseCallback):
         self.fig.canvas.draw()
         self.fig.canvas.flush_events()
 
-# A custom reward wrapper (unchanged from your code)
+# A custom reward wrapper
 class CustomReward(gym.Wrapper):
 
     def __init__(self, env, torso_z_min):
@@ -167,8 +167,7 @@ class CustomReward(gym.Wrapper):
         # Calculate x acceleration as the change in x_velocity divided by dt.
         x_acceleration = (info["x_velocity"] - self.last_x_velocity) / dt
         self.last_x_velocity = info["x_velocity"]
-
-        # Continue with your existing reward modifications.
+        
         body_id = mujoco.mj_name2id(
             self.env.unwrapped.model,
             mujoco.mjtObj.mjOBJ_BODY.value,
@@ -186,7 +185,7 @@ class CustomReward(gym.Wrapper):
         contact = info["reward_contact"]
         x_position = info["x_position"]
 
-        # For example, you might choose to define the reward as:
+        # Reward function
         reward = (0 * survive + 10 * forward)
         reward += 10 * x_position
         reward += 10 * (0.3 - pelvis_tilt)
