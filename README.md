@@ -1,5 +1,7 @@
 Cold trained **Mujoco humanoid-v5 model** within Openai gym environment, using **SB3 PPO2** and custom wrappers, including *callback*, *updating live-plot*, and *reward functions*.
 
+The preliminary result was far from ideal, partialy due to ill-designed reward function and non-adaptive learning rate. It was also subject to limited computation, lack of pretraining data, inherent limited dof of the humanoid model.
+
 #### 📁 Project Structure
 ```
 Robotics/
