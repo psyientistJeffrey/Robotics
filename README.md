@@ -1,1 +1,1 @@
-Trained Mujoco humanoid-v5 model within Openai gym environment from scratch, using PPO and custom reward function
+Cold trained Mujoco humanoid-v5 model within Openai gym environment, using PPO and custom reward function
